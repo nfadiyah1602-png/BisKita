@@ -34,8 +34,109 @@
             padding: 2px !important;
         } 
         </style>
-
         <style>
+            .navbar{
+background:#0057B8;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+}
+.logo{
+font-size:28px;
+font-weight:bold;
+}
+.menu{
+list-style:none;
+display:flex;
+gap:25px;
+}
+.menu a{
+color:white;
+text-decoration:none;
+}
+.hero{
+height:85vh;
+background:linear-gradient(
+rgba(0,87,184,0.75),
+rgba(0,87,184,0.75)
+);
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+.hero h1{
+font-size:100px;
+margin:0;
+}
+.hero p{
+font-size:28px;
+}
+.btn{
+margin-top:30px;
+padding:15px 30px;
+background:white;
+color:#0057B8;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+}
+.tentang{
+max-width:1000px;
+margin:auto;
+padding:60px 30px;
+text-align:center;
+}
+.team{
+padding:50px 30px;
+background:#f5f7fa;
+}
+.team h2{
+text-align:center;
+color:#0057B8;
+}
+.team-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:1200px;
+margin:auto;
+}
+.card{
+background:white;
+border-radius:15px;
+padding:25px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+.card h3{
+color:#0057B8;
+}
+.judul-peta{
+text-align:center;
+color:#0057B8;
+margin:40px 0;
+}
+#map{
+width:100%;
+height:700px;
+}
+footer{
+background:#0057B8;
+color:white;
+text-align:center;
+padding:40px 20px;
+}
+footer h3{
+margin-bottom:15px;
+font-size:24px;
+}
+footer p{
+margin:5px 0;
+}
         html, body, #map {
             width: 100%;
             height: 100%;
@@ -46,11 +147,77 @@
         <title></title>
     </head>
     <body>
+        <header class="navbar">
+<div class="logo">BISKITA</div>
+<ul class="menu">
+    <li><a href="#home">Beranda</a></li>
+    <li><a href="#profil">Profil</a></li>
+    <li><a href="#peta">Peta</a></li>
+</ul>
+</header>
+<section id="home" class="hero">
+<h1>BISKITA</h1>
+<p>Exploring Bogor with BISKITA!</p>
+<a href="#peta" class="btn">
+    Jelajahi Peta
+</a>
+</section>
+<section class="tentang">
+<h2>Tentang Website</h2>
+<p>
+    Website ini merupakan tugas besar Mata Kuliah Internet of Things (IoT)
+    Program Studi Perencanaan Wilayah dan Kota Universitas Diponegoro.
+    Website ini menampilkan informasi spasial rute dan halte BISKITA
+    Trans Pakuan Kota Bogor berbasis WebGIS.
+</p>
+<p>
+    Dosen Pengampu:
+    <b>Assoc. Prof. Dr. Anang Wahyu Sejati, S.T., M.T.</b>
+</p>
+</section>
+<section id="profil" class="team">
+<h2>Kelompok C9-PWK</h2>
+<div class="team-grid">
+<div class="card">
+<h3>Ardi Lukman Hakim</h3>
+<p>21040125130112</p>
+</div>
+<div class="card">
+<h3>Marco Martanagawa Simbolon</h3>
+<p>21040125120033</p>
+</div>
+<div class="card">
+<h3>Najwa Fadiyah</h3>
+<p>21040125140177</p>
+</div>
+<div class="card">
+<h3>Saphire Dias Putri</h3>
+<p>21040125130093</p>
+</div>
+<div class="card">
+<h3>Kayla Syifa Ramadhani</h3>
+<p>21040125140168</p>
+</div>
+<div class="card">
+<h3>Putri Bunga Aprilia</h3>
+<p>21040125140147</p>
+</div>
+</div>
+</section>
+<h2 id="peta" class="judul-peta">
+    Peta Interaktif BISKITA Trans Pakuan
+</h2>
         <div id="map">
             <div id="popup" class="ol-popup">
                 <a href="#" id="popup-closer" class="ol-popup-closer"></a>
                 <div id="popup-content"></div>
             </div>
+            <footer>
+<h3>BISKITA Trans Pakuan</h3>
+<p>Departemen Perencanaan Wilayah dan Kota</p>
+<p>Fakultas Teknik</p>
+<p>Universitas Diponegoro</p>
+</footer>
         </div>
         <script src="resources/qgis2web_expressions.js"></script>
         <script src="./resources/functions.js"></script>
